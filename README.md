@@ -1,7 +1,7 @@
 # pytorch-linear-models
 Implementation of linear models (OLS/LASSO/Ridge) in base PyTorch (so no torch.nn). This repo tries to follow the sklearn API for easy integration.
 
-# Useage
+# Usage
 ```
 from regression import *
 
@@ -14,9 +14,9 @@ clf.plot_history() # Plot loss over time
 ``` 
 
 # Requirements:
-torch
-numpy
-seaborn
+* torch
+* numpy
+* seaborn
 
 #  Work in progress:
 Working on itegrating (regularized) logistic regression.
