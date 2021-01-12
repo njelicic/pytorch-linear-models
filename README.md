@@ -6,11 +6,14 @@ Implementation of linear models (OLS/LASSO/Ridge) in base PyTorch (so no torch.n
 from regression import *
 
 clf = LinearRegression(penalty=None)  # Penalty can be one of: None for  OLS, 'l1' for LASSO or 'l2' for Ridge
+
 clf.fit(X_train,y_train)              # Fit the model like any sklearn model
 
-clf.predict(X_train)                  # Make predictions on new data
-
 clf.plot_history()                    # Plot loss over time
+
+clf.predict(X_test)                  # Make predictions on new data
+
+
 ``` 
 
 ## Requirements:
