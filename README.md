@@ -11,7 +11,7 @@ clf.fit(X_train,y_train)              # Fit the model like any sklearn model
 
 clf.plot_history()                    # Plot loss over time
 
-clf.predict(X_test)                  # Make predictions on new data
+clf.predict(X_test)                   # Make predictions on new data
 
 
 ``` 
