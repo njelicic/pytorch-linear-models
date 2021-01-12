@@ -3,7 +3,7 @@ Implementation of linear models (OLS/LASSO/Ridge) in base PyTorch (so no torch.n
 
 ## Usage
 ```
-from regression import *
+from regression import LinearRegression
 
 clf = LinearRegression(penalty=None)  # Penalty can be one of: None for  OLS, 'l1' for LASSO or 'l2' for Ridge
 
