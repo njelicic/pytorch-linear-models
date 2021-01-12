@@ -1,6 +1,5 @@
 # pytorch-linear-models
-Implementation of linear models (OLS/LASSO/Ridge) in base PyTorch. This repo tries to follow the sklearn API (model.fit(X_train,y_train)  -> model.predict(X_test))
-
+Implementation of linear models (OLS/LASSO/Ridge) in base PyTorch (so no torch.nn). This repo tries to follow the sklearn API for easy integration.
 
 # Useage
 ```
@@ -14,3 +13,10 @@ clf.predict(X_train) # make predictions on new data
 clf.plot_history() # Plot loss over time
 ``` 
 
+# Requirements:
+torch
+numpy
+seaborn
+
+#  Work in progress:
+Working on itegrating (regularized) logistic regression.
