@@ -22,4 +22,4 @@ clf.predict(X_test)                   # Make predictions on new data
 * seaborn==0.10.0
 
 ## Work in progress:
-Working on itergrating (regularized) logistic regression.
+Working on integrating (regularized) logistic regression.
