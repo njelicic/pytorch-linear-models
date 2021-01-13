@@ -19,7 +19,7 @@ clf.predict(X_test)                   # Make predictions on new data
 ```
 from classification import LogisticRegression
 
-clf = LogisticRegression(penalty=None)  # Penalty can be one of: None for  OLS, 'l1' for LASSO or 'l2' for Ridge
+clf = LogisticRegression(penalty=None)# Penalty can be one of: None for  OLS, 'l1' for LASSO or 'l2' for Ridge
 
 clf.fit(X_train,y_train)              # Fit the model like any sklearn model
 
