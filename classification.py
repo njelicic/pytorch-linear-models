@@ -1,3 +1,6 @@
+import torch
+import seaborn as sns
+
 class LogisticRegression():
     def __init__(self, C=0.1,lr=1e-3, penalty=None, n_iter=10000):
         self.C = C
