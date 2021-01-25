@@ -22,10 +22,10 @@ class LogisticRegression():
         bce = -torch.mean(y * torch.log(y_hat))              #compute binary crossentropy
         
         if self.penalty == 'l2':
-            penalty = self.C*torch.sum(self.w**2)            # lambda multiplied by the sum of squared weights 
+            penalty = self.C * torch.sum(self.w**2)            # lambda multiplied by the sum of squared weights 
         
         if self.penalty == 'l1':
-            penalty = torch.abs(self.C*torch.sum(self.w))    # lambda multiplied by the sum of weights 
+            penalty = self.C * torch.sum(torch.abs(self.w))    # lambda multiplied by the sum of weights 
         
         if self.penalty == None:
             penalty = 0 
