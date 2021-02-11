@@ -2,12 +2,13 @@ import torch
 import seaborn as sns
 
 class LogisticRegression():
-    def __init__(self, C=0.1,lr=1e-3, penalty=None, n_iter=10000):
+    def __init__(self, C=0.1,lr=1e-3, penalty=None, n_iter=10000, fit_intercept=True):
         self.C = C
         self.lr = lr
         self.history = []
         self.penalty = penalty 
         self.n_iter = n_iter
+        self.fit_intercept = fit_intercept
         return
     
     def logreg(self, x):
@@ -32,6 +33,9 @@ class LogisticRegression():
         
         return  bce + penalty 
     
+    def add_intercept(self,x):
+        a = torch.ones(x.size()[0],1)
+        return torch.cat((x,a),axis=1)
     
     def cast_to_tensor(self, x):
         return torch.tensor(x).float()
@@ -41,6 +45,9 @@ class LogisticRegression():
         x = self.cast_to_tensor(x)
         y = self.cast_to_tensor(y)
         
+        if self.fit_intercept:
+            x = self.add_intercept(x)
+            
         self.w = torch.randn(x.size()[1], requires_grad=True) #instantiate weights
         self.b = torch.randn(1, requires_grad=True)           #instantiate bias
         
@@ -60,10 +67,11 @@ class LogisticRegression():
     def predict(self, x):
         """"Predict"""  
         x = self.cast_to_tensor(x)
+        if self.fit_intercept:
+            x = self.add_intercept(x)
+        
         return self.logreg(x).detach().numpy()
-    
 
-    
     def plot_history(self):
         """"Plot loss function over time"""  
         return sns.lineplot(x=[i+1 for i in range(len(self.history))],y=self.history).set(xlabel='Iteration', ylabel='Loss',title='History')
